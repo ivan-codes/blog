@@ -1,3 +1,4 @@
+import Layout from "components/Layout";
 import fs from "fs";
 import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -16,13 +17,9 @@ type Props = {
 function Post({ title, contentHtml, data }: Props) {
   console.log(title, contentHtml, data);
   return (
-    <div>
-      <h1>{title}</h1>
-      <div
-        className="font-serif prose"
-        dangerouslySetInnerHTML={{ __html: contentHtml }}
-      />
-    </div>
+    <Layout title={title}>
+      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+    </Layout>
   );
 }
 

@@ -1,11 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+body,
+#__next {
+  @apply w-full h-full leading-8 tracking-wide m-0 p-0;
+  font-family: "Bitter", serif;
+}
+
+h1 {
+  @apply text-4xl font-bold my-2.5;
+}
+h2 {
+  @apply text-3xl font-bold my-3;
+}
+h3 {
+  @apply text-2xl font-bold my-3.5;
+}
+
+ul {
+  @apply list-disc list-inside my-2;
+}
+ol {
+  @apply list-decimal list-inside my-2;
+}
+
+a {
+  @apply font-semibold underline;
+}
+
+pre {
+  @apply border border-code-border bg-code-bg px-5 py-4 my-2;
+}
+
+blockquote {
+  @apply italic border-l-4 border-gray-300 px-4 py-2 my-2;
+}
+
+.page-layout {
+  @apply max-w-2xl h-full mx-auto px-2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
 }
