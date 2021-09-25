@@ -31,7 +31,8 @@ function Home({ postsData }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = () => {
-  // const files = fs.readdirSync("posts");
+  const files = fs.readdirSync("posts");
+  console.log(files);
 
   // const postsData: PostData[] = files.map((file) => {
   //   const markdown = fs.readFileSync(path.join("posts", file), "utf-8");
