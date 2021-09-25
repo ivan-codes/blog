@@ -1,5 +1,4 @@
 import Layout from "components/Layout";
-import dayjs from "dayjs";
 import fs from "fs";
 import matter from "gray-matter";
 import hljs from "highlight.js";
@@ -10,10 +9,11 @@ import { ParsedUrlQuery } from "querystring";
 import React, { useEffect } from "react";
 import { remark } from "remark";
 import html from "remark-html";
+import extractPostData from "utils/extractPostData";
+import formatDate from "utils/formatDate";
 hljs.registerLanguage("javascript", javascript);
 
 type Props = {
-  title: string;
   contentHtml: string;
   data: any;
 };
@@ -27,9 +27,7 @@ function Post({ contentHtml, data }: Props) {
     <Layout title={data.title} description={data.description}>
       <div className="text-center mb-8">
         <h1>{data.title}</h1>
-        <p className="text-trueGray-500">
-          {dayjs(data.createdAt).format("MMMM D, YYYY")}
-        </p>
+        <p className="text-trueGray-500">{formatDate(data.createdAt)}</p>
       </div>
       <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
     </Layout>
@@ -37,13 +35,16 @@ function Post({ contentHtml, data }: Props) {
 }
 
 interface IParams extends ParsedUrlQuery {
-  title: string;
+  filename: string;
 }
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const { title } = context.params as IParams;
+  const { filename } = context.params as IParams;
 
-  const markdown = fs.readFileSync(path.join("posts", `${title}.md`), "utf-8");
+  const markdown = fs.readFileSync(
+    path.join("posts", `${filename}.md`),
+    "utf-8"
+  );
 
   const parsedMarkdown = matter(markdown);
 
@@ -53,9 +54,8 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
   return {
     props: {
-      title: title,
       contentHtml: contentHtml,
-      data: parsedMarkdown.data,
+      data: extractPostData(parsedMarkdown.data, filename),
     },
   };
 };
@@ -64,7 +64,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const files = fs.readdirSync("posts");
   const paths = files.map((file) => ({
     params: {
-      title: file.replace(".md", ""),
+      filename: file.replace(".md", ""),
     },
   }));
 

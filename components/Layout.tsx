@@ -14,7 +14,7 @@ function Layout({
   description = "Ivan Codes' Blog",
 }: Props) {
   return (
-    <div className="w-full h-full px-2">
+    <div className="w-full h-full px-3">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />

@@ -1,7 +1,7 @@
 ---
 title: Demo Blog Post
 description: A dummy post to showcase all the features
-createdAt: 09-25-2021
+createdAt: 2021-09-25
 ---
 
 # header1

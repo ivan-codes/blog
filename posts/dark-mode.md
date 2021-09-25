@@ -1,14 +1,10 @@
 ---
 title: Tips & Tricks for implementing Dark Mode
 description: This website is the first time I ever added dark mode. It is a simple concept, but getting it to work smoothly and in a non-hacky way is actually quite challenging. So here are some tips and tricks I learned to save you the time and headaches.
-createdAt: 09-25-2021
+createdAt: 2021-09-25
 ---
 
-This website is the first time I ever added dark mode.
-
-### Triple heading
-
-It is a simple concept, but getting it to work smoothly and in a non-hacky way is actually quite challenging. So here are some tips and tricks I learned to save you the time and headaches.
+This website is the first time I ever added dark mode. It is a simple concept, but getting it to work smoothly and in a non-hacky way is actually quite challenging. So here are some tips and tricks I learned to save you the time and headaches.
 
 ## Tailwind
 

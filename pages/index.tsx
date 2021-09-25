@@ -1,17 +1,11 @@
 import Layout from "components/Layout";
-import React from "react";
 import PostPreview from "components/PostPreview";
-import { GetStaticProps } from "next";
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
-
-type PostData = {
-  title: string;
-  description: string;
-  createdAt: string;
-  pathname: string;
-};
+import { GetStaticProps } from "next";
+import path from "path";
+import React from "react";
+import extractPostData, { PostData } from "utils/extractPostData";
 
 type Props = {
   postsData: PostData[];
@@ -36,14 +30,8 @@ export const getStaticProps: GetStaticProps<Props> = () => {
   const postsData: PostData[] = files.map((file) => {
     const markdown = fs.readFileSync(path.join("posts", file), "utf-8");
     const parsedMarkdown = matter(markdown);
-    return {
-      title: parsedMarkdown.data.title,
-      description: parsedMarkdown.data.description,
-      createdAt: parsedMarkdown.data.createdAt,
-      pathname: file.replace(".md", ""),
-    };
+    return extractPostData(parsedMarkdown.data, file.replace(".md", ""));
   });
-  console.log(postsData);
 
   postsData.sort(
     (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
