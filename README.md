@@ -1,4 +1,4 @@
-# ✏ Blog
+# Blog
 
 A website to host future blog posts I may or may not write.
 
