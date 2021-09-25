@@ -19,3 +19,5 @@ A website to host future blog posts I may or may not write.
 - Light and dark mode
 - Highlight.js syntax highlighting
 - Next.js static generation
+
+See my progress on [twitter](https://twitter.com/ivan_codes)
