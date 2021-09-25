@@ -35,20 +35,13 @@ export const getStaticProps: GetStaticProps<Props> = () => {
 
   const postsData: PostData[] = files.map((file) => {
     const markdown = fs.readFileSync(path.join("posts", file), "utf-8");
-    console.log(markdown);
+    const parsedMarkdown = matter(markdown);
     return {
-      title: "",
-      description: "",
-      createdAt: "09-25-2021",
-      pathname: "test",
+      title: parsedMarkdown.data.title,
+      description: parsedMarkdown.data.description,
+      createdAt: parsedMarkdown.data.createdAt,
+      pathname: file.replace(".md", ""),
     };
-    //   const parsedMarkdown = matter(markdown);
-    //   return {
-    //     title: parsedMarkdown.data.title,
-    //     description: parsedMarkdown.data.description,
-    //     createdAt: parsedMarkdown.data.createdAt,
-    //     pathname: file.replace(".md", ""),
-    //   };
   });
   console.log(postsData);
 
