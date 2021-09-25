@@ -18,7 +18,6 @@ type Props = {
 };
 
 function Home({ postsData }: Props) {
-  console.log(postsData);
   return (
     <Layout title="Ivan Codes' Blog">
       <h1 className="text-center mb-6">Blog about web dev</h1>
