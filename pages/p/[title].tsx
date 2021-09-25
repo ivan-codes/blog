@@ -4,9 +4,12 @@ import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps } from "next";
 import path from "path";
 import { ParsedUrlQuery } from "querystring";
-import React from "react";
+import React, { useEffect } from "react";
 import { remark } from "remark";
 import html from "remark-html";
+import hljs from "highlight.js";
+import javascript from "highlight.js/lib/languages/javascript";
+hljs.registerLanguage("javascript", javascript);
 
 type Props = {
   title: string;
@@ -16,6 +19,9 @@ type Props = {
 
 function Post({ title, contentHtml, data }: Props) {
   console.log(title, contentHtml, data);
+  useEffect(() => {
+    hljs.initHighlighting();
+  }, []);
   return (
     <Layout title={title}>
       <div dangerouslySetInnerHTML={{ __html: contentHtml }} />

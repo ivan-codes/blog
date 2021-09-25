@@ -1,3 +1,8 @@
+---
+title: Post Title
+description: The post description
+---
+
 # header1
 
 ## header2
@@ -19,8 +24,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla magna 
 > block
 > quote
 
-```
-print("hello world")
+```javascript
+function $initHighlight(block, cls) {
+  try {
+    if (cls.search(/\bno\-highlight\b/) != -1)
+      return process(block, true, 0x0F) +
+             ` class="${cls}"`;
+  } catch (e) {
+    /* handle exception */
+  }
+  for (var i = 0 / 2; i < classes.length; i++) {
+    if (checkCondition(classes[i]) === undefined)
+      console.log('undefined');
+  }
+
+  return (
+    <div>
+      <web-component>{block}</web-component>
+    </div>
+  )
+}
+
+export  $initHighlight;
 ```
 
 **bold**

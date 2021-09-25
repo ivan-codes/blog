@@ -33,7 +33,7 @@ a {
 }
 
 pre {
-  @apply border border-code-border bg-code-bg px-5 py-4 my-2;
+  @apply border border-code-border bg-code-bg my-2;
 }
 
 blockquote {
