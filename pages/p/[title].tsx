@@ -1,14 +1,15 @@
 import Layout from "components/Layout";
+import { format } from "fecha";
 import fs from "fs";
 import matter from "gray-matter";
+import hljs from "highlight.js";
+import javascript from "highlight.js/lib/languages/javascript";
 import { GetStaticPaths, GetStaticProps } from "next";
 import path from "path";
 import { ParsedUrlQuery } from "querystring";
 import React, { useEffect } from "react";
 import { remark } from "remark";
 import html from "remark-html";
-import hljs from "highlight.js";
-import javascript from "highlight.js/lib/languages/javascript";
 hljs.registerLanguage("javascript", javascript);
 
 type Props = {
@@ -18,12 +19,18 @@ type Props = {
 };
 
 function Post({ title, contentHtml, data }: Props) {
-  console.log(title, contentHtml, data);
   useEffect(() => {
     hljs.initHighlighting();
   }, []);
+
   return (
-    <Layout title={title}>
+    <Layout title={data.title} description={data.description}>
+      <div className="text-center">
+        <h1>{data.title}</h1>
+        <p className="text-trueGray-500">
+          {format(new Date(data.createdAt), "MMMM Do, YYYY")}
+        </p>
+      </div>
       <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
     </Layout>
   );

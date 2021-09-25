@@ -5,13 +5,19 @@ import Link from "next/link";
 type Props = {
   children?: ReactNode;
   title?: string;
+  description?: string;
 };
 
-function Layout({ children, title = "Ivan's Blog" }: Props) {
+function Layout({
+  children,
+  title = "Ivan's Blog",
+  description = "Ivan Codes' Blog",
+}: Props) {
   return (
     <div className="w-full h-full">
       <Head>
         <title>{title}</title>
+        <meta name="description" content={description} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
@@ -39,7 +45,7 @@ function Layout({ children, title = "Ivan's Blog" }: Props) {
         </header>
         <div className="flex flex-col">
           {children}
-          <footer className="mt-auto">Footer</footer>
+          <footer className="flex items-center h-24 mt-auto"></footer>
         </div>
       </div>
     </div>

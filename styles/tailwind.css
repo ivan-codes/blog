@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "ia-light.css" screen;
+@import "ia-dark.css" screen and (prefers-color-scheme: dark);
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +9,7 @@
 html,
 body,
 #__next {
-  @apply w-full h-full leading-8 tracking-wide m-0 p-0;
+  @apply w-full h-full leading-8 tracking-wide m-0 p-0 bg-white text-black dark:bg-trueGray-900 dark:text-trueGray-300;
   font-family: "Bitter", serif;
 }
 
@@ -33,11 +35,11 @@ a {
 }
 
 pre {
-  @apply border border-code-border bg-code-bg my-2;
+  @apply border border-code-border bg-code-bg my-2 dark:bg-trueGray-800 dark:border-trueGray-800;
 }
 
 blockquote {
-  @apply italic border-l-4 border-gray-300 px-4 py-2 my-2;
+  @apply italic border-l-4 border-trueGray-300 px-4 py-2 my-2;
 }
 
 .page-layout {

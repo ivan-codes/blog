@@ -5,7 +5,7 @@ import PostPreview from "components/PostPreview";
 function Home() {
   return (
     <Layout title="Ivan Codes' Blog">
-      <h1 className="mb-6">Blog about web dev</h1>
+      <h1 className="text-center mb-6">Blog about web dev</h1>
       <section>
         <PostPreview />
         <PostPreview />
