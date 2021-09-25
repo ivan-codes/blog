@@ -5,7 +5,7 @@ A website to host future blog posts I may or may not write.
 ## Setup
 
 1. `npm run dev` or `yarn dev`
-2. visit http://localhost:3000
+2. Visit http://localhost:3000
 
 ## Technologies
 
