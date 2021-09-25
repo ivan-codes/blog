@@ -12,3 +12,10 @@ A website to host future blog posts I may or may not write.
 - Next.js
 - Typescript
 - Tailwind CSS
+
+## ✨ Features
+
+- Markdown to HTML
+- Light and dark mode
+- Highlight.js syntax highlighting
+- Next.js static generation
