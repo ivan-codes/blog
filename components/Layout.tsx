@@ -14,7 +14,7 @@ function Layout({
   description = "Ivan Codes' Blog",
 }: Props) {
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full px-2">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -43,10 +43,10 @@ function Layout({
             </a>
           </div>
         </header>
-        <div className="flex flex-col">
-          {children}
-          <footer className="flex items-center h-24 mt-auto"></footer>
-        </div>
+        {/* <div className="flex flex-col"> */}
+        {children}
+        <footer className="flex items-center h-24 mt-auto"></footer>
+        {/* </div> */}
       </div>
     </div>
   );

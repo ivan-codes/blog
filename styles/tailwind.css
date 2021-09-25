@@ -46,8 +46,5 @@ blockquote {
 }
 
 .page-layout {
-  @apply max-w-2xl h-full mx-auto px-2;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  @apply w-full max-w-2xl h-full mx-auto;
 }
