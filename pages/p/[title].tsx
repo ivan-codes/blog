@@ -18,7 +18,7 @@ type Props = {
   data: any;
 };
 
-function Post({ title, contentHtml, data }: Props) {
+function Post({ contentHtml, data }: Props) {
   useEffect(() => {
     hljs.initHighlighting();
   }, []);
@@ -40,7 +40,7 @@ interface IParams extends ParsedUrlQuery {
   title: string;
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const { title } = context.params as IParams;
 
   const markdown = fs.readFileSync(path.join("posts", `${title}.md`), "utf-8");
