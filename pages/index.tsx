@@ -32,18 +32,25 @@ function Home({ postsData }: Props) {
 
 export const getStaticProps: GetStaticProps<Props> = () => {
   const files = fs.readdirSync("posts");
-  console.log(files);
 
-  // const postsData: PostData[] = files.map((file) => {
-  //   const markdown = fs.readFileSync(path.join("posts", file), "utf-8");
-  //   const parsedMarkdown = matter(markdown);
-  //   return {
-  //     title: parsedMarkdown.data.title,
-  //     description: parsedMarkdown.data.description,
-  //     createdAt: parsedMarkdown.data.createdAt,
-  //     pathname: file.replace(".md", ""),
-  //   };
-  // });
+  const postsData: PostData[] = files.map((file) => {
+    const markdown = fs.readFileSync(path.join("posts", file), "utf-8");
+    console.log(markdown);
+    return {
+      title: "",
+      description: "",
+      createdAt: "09-25-2021",
+      pathname: "test",
+    };
+    //   const parsedMarkdown = matter(markdown);
+    //   return {
+    //     title: parsedMarkdown.data.title,
+    //     description: parsedMarkdown.data.description,
+    //     createdAt: parsedMarkdown.data.createdAt,
+    //     pathname: file.replace(".md", ""),
+    //   };
+  });
+  console.log(postsData);
 
   // postsData.sort(
   //   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
