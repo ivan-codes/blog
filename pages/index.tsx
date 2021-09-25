@@ -23,13 +23,7 @@ function Home({ postsData }: Props) {
       <h1 className="text-center mb-6">Blog about web dev</h1>
       <section>
         {postsData.map((post, idx) => (
-          <PostPreview
-            title={post.title}
-            description={post.description}
-            pathname={post.pathname}
-            createdAt={post.createdAt}
-            key={idx}
-          />
+          <PostPreview {...post} key={idx} />
         ))}
       </section>
     </Layout>

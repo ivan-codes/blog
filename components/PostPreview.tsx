@@ -12,9 +12,9 @@ type Props = {
 function PostPreview({ title, description, createdAt, pathname }: Props) {
   return (
     <article className="mb-10">
-      <Link href={`/p/${pathname}`} passHref>
+      {/* <Link href={`/p/${pathname}`} passHref>
         <h3 className="cursor-pointer mb-0 hover:underline">{title}</h3>
-      </Link>
+      </Link> */}
       <p className="text-trueGray-500 mb-1">
         {format(new Date(createdAt), "MMMM Do, YYYY")}
       </p>
