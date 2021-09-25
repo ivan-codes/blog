@@ -45,9 +45,9 @@ export const getStaticProps: GetStaticProps<Props> = () => {
   });
   console.log(postsData);
 
-  // postsData.sort(
-  //   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  // );
+  postsData.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  );
 
   return {
     props: {
