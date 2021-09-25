@@ -21,11 +21,17 @@ function Home({ postsData }: Props) {
   return (
     <Layout title="Ivan Codes' Blog">
       <h1 className="text-center mb-6">Blog about web dev</h1>
-      {/* <section>
+      <section>
         {postsData.map((post, idx) => (
-          <PostPreview {...post} key={idx} />
+          <PostPreview
+            title={post.title}
+            description={post.description}
+            pathname={post.pathname}
+            createdAt={post.createdAt}
+            key={idx}
+          />
         ))}
-      </section> */}
+      </section>
     </Layout>
   );
 }
