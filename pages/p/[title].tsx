@@ -25,7 +25,7 @@ function Post({ contentHtml, data }: Props) {
 
   return (
     <Layout title={data.title} description={data.description}>
-      <div className="text-center">
+      <div className="text-center mb-8">
         <h1>{data.title}</h1>
         <p className="text-trueGray-500">
           {format(new Date(data.createdAt), "MMMM Do, YYYY")}

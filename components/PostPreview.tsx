@@ -11,7 +11,7 @@ type Props = {
 
 function PostPreview({ title, description, createdAt, pathname }: Props) {
   return (
-    <article className="mb-12">
+    <article className="mb-10">
       <Link href={`/p/${pathname}`} passHref>
         <h3 className="w-max cursor-pointer mb-0 hover:underline">{title}</h3>
       </Link>

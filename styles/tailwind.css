@@ -14,13 +14,13 @@ body,
 }
 
 h1 {
-  @apply text-4xl font-bold my-2.5;
+  @apply text-4xl font-bold mb-3 mt-5;
 }
 h2 {
-  @apply text-3xl font-bold my-3;
+  @apply text-3xl font-bold mb-3 mt-5;
 }
 h3 {
-  @apply text-2xl font-bold my-3.5;
+  @apply text-2xl font-bold mb-2 mt-3;
 }
 
 ul {
@@ -36,6 +36,9 @@ a {
 
 pre {
   @apply border border-code-border bg-code-bg my-2 dark:bg-trueGray-800 dark:border-trueGray-800;
+}
+code {
+  @apply bg-code-bg dark:bg-trueGray-800;
 }
 
 blockquote {
