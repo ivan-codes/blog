@@ -14,7 +14,7 @@ type Props = {
 function Home({ postsData }: Props) {
   return (
     <Layout title="Ivan Codes' Blog">
-      <h1 className="text-center mb-6">Blog about web dev</h1>
+      <h1 className="text-center mt-10 mb-12">Blog about web dev</h1>
       <section>
         {postsData.map((post, idx) => (
           <PostPreview {...post} key={idx} />
