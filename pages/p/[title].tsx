@@ -1,5 +1,5 @@
 import Layout from "components/Layout";
-import { format } from "fecha";
+import dayjs from "dayjs";
 import fs from "fs";
 import matter from "gray-matter";
 import hljs from "highlight.js";
@@ -28,7 +28,7 @@ function Post({ contentHtml, data }: Props) {
       <div className="text-center mb-8">
         <h1>{data.title}</h1>
         <p className="text-trueGray-500">
-          {format(new Date(data.createdAt), "MMMM Do, YYYY")}
+          {dayjs(data.createdAt).format("MMMM D, YYYY")}
         </p>
       </div>
       <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
